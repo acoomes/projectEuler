@@ -22,7 +22,7 @@ sub primeChecker {
     # If $numToCheck is evenly divisible by an 
     # iteration return false.
     for ( my $i = 2; $i <= sqrt $numToCheck; $i++ ) {
-        if ( $numToCheck % $i == 0 ) {
+        if ( $numToCheck % $i eq 0 ) {
             $isPrime = 0;
             last;
         }
