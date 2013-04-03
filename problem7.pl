@@ -3,6 +3,23 @@
 
 # What is the 10,001st prime number?
 
+my $finalPrime;
+my $numOfPrimes = 0;
+my $i = 2;
+
+# Loop over $i, checking each iteration for primes. Each time
+# a prime is found, iterate $numOfPrimes. Once 10001 primes 
+# have been found, set the last one to $finalPrime.
+while( $numOfPrimes < 10001 ) {
+    if ( primeChecker( $i ) ) {
+        $numOfPrimes++;
+        $finalPrime = $i;
+    }
+    $i++;
+}
+
+print "\n  $finalPrime\n";
+
 # Checks whether a given number is prime.
 sub primeChecker {
     my $numToCheck = shift;
