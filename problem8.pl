@@ -21,6 +21,8 @@
 # 05886116467109405077541002256983155200055935729725
 # 71636269561882670428252483600823257530420752963450
 
+# Assign the 1,000-digit number to @bigNumberArray, setting each line as a
+# value in the array.
 my @bigNumberArray = (
     '73167176531330624919225119674426574742355349194934',
     '96983520312774506326239578318016984801869478851843',
@@ -44,11 +46,17 @@ my @bigNumberArray = (
     '71636269561882670428252483600823257530420752963450'
 );
 
+# Join the array into a string, then split the string into an array where
+# each digit is a value in the array.
 my $bigNumber = join( "", @bigNumberArray );
 my @bigNumberSingles = split( "", $bigNumber );
 
 my $previousProduct = 0;
 
+# Loop from 0 through the length of @bigNumberSingles. For each iteration
+# get the product of the 5 consecutive digits in the array, using the
+# current iteration of $i as the starting index.
+# If the product is bigger than the last, set it as $previousProduct.
 for ( my $i = 0; $i <= @bigNumberSingles; $i++ ) {
     my $currentProduct = @bigNumberSingles[ $i ] * 
                          @bigNumberSingles[ $i + 1 ] *
