@@ -16,10 +16,14 @@ my $sumOfSquares;
 my $squareOfSums;
 my $difference;
 
+# Loop from 100 to 1, adding each squared iteration of $i to
+# $sumOfSquares.
 for ( my $i = 100; $i > 0; $i-- ) {
     $sumOfSquares += $i ** 2;
 }
 
+# Loop from 100 to 1, adding each iteration of $i to $squareOfSums.
+# Then square $squareOfSums.
 for ( my $i = 100; $i > 0; $i-- ) {
     $squareOfSums += $i;
 }
