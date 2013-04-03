@@ -46,3 +46,17 @@ my @bigNumberArray = (
 
 my $bigNumber = join( "", @bigNumberArray );
 my @bigNumberSingles = split( "", $bigNumber );
+
+my $previousProduct = 0;
+
+for ( my $i = 0; $i <= @bigNumberSingles; $i++ ) {
+    my $currentProduct = @bigNumberSingles[ $i ] * 
+                         @bigNumberSingles[ $i + 1 ] *
+                         @bigNumberSingles[ $i + 2 ] *
+                         @bigNumberSingles[ $i + 3 ] *
+                         @bigNumberSingles[ $i + 4 ];
+    if ( $currentProduct > $previousProduct ) {
+        $previousProduct = $currentProduct;
+    }
+}
+print "\n  $previousProduct\n";
