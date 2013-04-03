@@ -17,13 +17,13 @@ my $squareOfSums;
 my $difference;
 
 for ( my $i = 100; $i > 0; $i-- ) {
-    $sumOfSquares += $i * $i;
+    $sumOfSquares += $i ** 2;
 }
 
 for ( my $i = 100; $i > 0; $i-- ) {
     $squareOfSums += $i;
 }
-$squareOfSums = $squareOfSums * $squareOfSums;
+$squareOfSums = $squareOfSums ** 2;
 
 $difference = $squareOfSums - $sumOfSquares;
 
