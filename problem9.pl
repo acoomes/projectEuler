@@ -17,7 +17,6 @@ my $c;
 my $sum;
 my $product;
 my $aAndB;
-my $found = 0;
 
 # Loop through $a and $b starting at their lowest possible values and going
 # up to 1000. Set $c to the square root of $a^2 plus $b^2 If a Pythagorean 
@@ -33,7 +32,6 @@ for ( $a = 1; $a <= 1000; $a++ ) {
         if ( pythagoreanChecker( $a, $b, $c ) && $sum eq 1000 ) {
             $product = $a * $b * $c;
             print "\n  $product\n";
-            $found = 1;
             last;
         }
     }
