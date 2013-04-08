@@ -7,10 +7,6 @@
 # There exists exactly one Pythagorean triplet for which a + b + c = 1000.
 # Find the product abc.
 
-# This goes ABOVE your code.
-use Time::HiRes qw/time/;
-my $startTime = time;
-
 my $a;
 my $b;
 my $c;
@@ -49,7 +45,3 @@ sub pythagoreanChecker {
         return 0;
     }
 }
-
-# This goes BELOW your code.
-my $totalTime = time - $startTime;
-print "\n  Ran in $totalTime\n";
