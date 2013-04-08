@@ -1,15 +1,17 @@
 # The sum of the primes below 10 is 2 + 3 + 5 + 7 = 17.
 
 # Find the sum of all the primes below two million.
+use Time::HiRes qw/time/;
+my $startTime = time;
 
-my $i = 2;
-my $sum;
+my $i = 3;
+my $sum = 2;
 
 while( $i < 2000000 ) {
     if ( primeChecker( $i ) ) {
         $sum += $i;
     }
-    $i++;
+    $i += 2;
 }
 
 print "\n  $sum\n";
@@ -30,3 +32,6 @@ sub primeChecker {
     }
     return $isPrime;
 }
+
+my $totalTime = time - $startTime;
+print "\n  Ran in $totalTime\n";
