@@ -16,18 +16,27 @@ my $b;
 my $c;
 my $sum;
 my $product;
+my $aAndB;
 my $found = 0;
 
-# Loop through $a, $b and $c starting at their lowest possible values and going
-# up to their highest. If a Pythagorean triplet is found and the sum of the
-# triplet is 1000, print the product of the triplet and break
-# INSERT LOOP HERE
+# Loop through $a and $b starting at their lowest possible values and going
+# up to 1000. Set $c to the square root of $a^2 plus $b^2 If a Pythagorean 
+# triplet is found and the sum of the triplet is 1000, print the product of 
+# the triplet and break.
 $sum = $a + $b + $c;
 $product = $a * $b * $c;
-if ( pythagoreanChecker( $a, $b, $c ) && $sum eq 1000 ) {
-    print "\n  $product\n";
-    $found = 1;
-    last;
+for ( $a = 1; $a <= 1000; $a++ ) {
+    for( $b = $a + 1; $b <= 1000; $b++ ) {
+        $aAndB = $a ** 2 + $b ** 2;
+        $c = sqrt $aAndB;
+        $sum = $a + $b + $c;
+        if ( pythagoreanChecker( $a, $b, $c ) && $sum eq 1000 ) {
+            $product = $a * $b * $c;
+            print "\n  $product\n";
+            $found = 1;
+            last;
+        }
+    }
 }
 
 # Checks 3 parameters to see if they are a pythagorean triplet.
